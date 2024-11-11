@@ -13,6 +13,9 @@ namespace MauiAppCadastroEventos
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Comfortaa-Bold.ttf", "ComfortaaBold");
+                    fonts.AddFont("Comfortaa-Light.ttf", "ComfortaaLight");
+                    fonts.AddFont("Comfortaa-Regular.ttf", "Comfortaa");
                 });
 
 #if DEBUG

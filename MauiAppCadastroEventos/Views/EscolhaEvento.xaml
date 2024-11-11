@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCadastroEventos.Views.EscolhaEvento"
+             Title="SP Fest"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Gray200}">
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+
+        <Label Text="Event Fest"
+               HorizontalTextAlignment="Center"
+               FontFamily="Comfortaa"
+               FontSize="50"
+               TextColor="{StaticResource Tertiary}"/>
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Label Text="Escolha o evento:" />
+
+                <Picker x:Name="pck_evento"
+                        Title="Selecione um evento" />
+
+                <Label Text="Escolha o local:" />
+
+                <Picker x:Name="pck_local"
+                        Title="Selecione o local" />
+
+
+                
+                    <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
+
+                        <Label Grid.Row="0" Grid.Column="0"
+                           Text="Mulher:" />
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_mulher}"/>
+
+                        <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_mulher"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"
+                             BackgroundColor="{StaticResource Gray300}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                           Text="Homem:" />
+
+                        <Label Grid.Row="1" Grid.Column="1"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_homem}"/>
+
+                        <Stepper Grid.Row="1" Grid.Column="2"
+                             x:Name="stp_homem"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"
+                             BackgroundColor="{StaticResource Gray300}"/>
+                    </Grid>
+                
+
+                <Frame Padding="10"
+                       Margin="10">
+                    
+                    <VerticalStackLayout>
+                        <Label Text="Escolha a data" />
+                        
+                        <HorizontalStackLayout>
+                            <Label Text="Inicio:" />
+                            <DatePicker x:Name="dtpck_inicio"
+                                        Format="dd/MM/yyyy" />  
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Término:" />
+                            <DatePicker x:Name="dtpck_termino"
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+                    
+                    </VerticalStackLayout>
+                </Frame>
+                
+                <Button Text="Avançar" />
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
